@@ -10,8 +10,8 @@ import '@fontsource/roboto/700.css';
 import {CircularProgress, ThemeProvider} from "@mui/material";
 import {Provider} from 'react-redux';
 import theme from './theme';
-import './i18n';
 import store from './store';
+import './i18n';
 
 ReactDOM.render(
     <React.StrictMode>

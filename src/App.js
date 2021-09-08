@@ -5,7 +5,7 @@ import {Button, ButtonGroup, Checkbox, styled, Typography} from "@mui/material";
 import Button1 from "./button1";
 import {useTranslation} from "react-i18next";
 import TopBar from "./components/TopBar/TopBar";
-import {BrowserRouter, HashRouter, Link, Route, Switch, useHistory} from "react-router-dom";
+import {HashRouter, Link, Route, Switch, useHistory} from "react-router-dom";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 
@@ -17,11 +17,10 @@ const App = () => {
         },
     }));
     const {t, i18n} = useTranslation();
-    const history = useHistory();
     return (
         <HashRouter>
             <div className="App">
-                <TopBar/>
+                <TopBar name={t('topBar.name')}/>
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>

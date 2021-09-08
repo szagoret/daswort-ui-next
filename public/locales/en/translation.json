@@ -1,3 +1,6 @@
 {
-  "title": "Wellcome react-i18next"
+  "title": "Wellcome react-i18next",
+  "topBar": {
+    "name": "Das Wort"
+  }
 }

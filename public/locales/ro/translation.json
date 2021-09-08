@@ -1,3 +1,6 @@
 {
-  "title": "Bine ai venit react-i18next"
+  "title": "Bine ai venit react-i18next",
+  "topBar": {
+    "name": "Das Wort"
+  }
 }
