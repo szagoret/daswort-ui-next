@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/daswort-ui-next/static/css/main.a617e044.chunk.css",
-    "main.js": "/daswort-ui-next/static/js/main.be137974.chunk.js",
-    "main.js.map": "/daswort-ui-next/static/js/main.be137974.chunk.js.map",
-    "runtime-main.js": "/daswort-ui-next/static/js/runtime-main.3a90ec6b.js",
-    "runtime-main.js.map": "/daswort-ui-next/static/js/runtime-main.3a90ec6b.js.map",
+    "main.css": "/daswort-ui-next/static/css/main.6f975f50.chunk.css",
+    "main.js": "/daswort-ui-next/static/js/main.e09db72c.chunk.js",
+    "main.js.map": "/daswort-ui-next/static/js/main.e09db72c.chunk.js.map",
+    "runtime-main.js": "/daswort-ui-next/static/js/runtime-main.97bab9a8.js",
+    "runtime-main.js.map": "/daswort-ui-next/static/js/runtime-main.97bab9a8.js.map",
     "static/css/2.9f34d7ff.chunk.css": "/daswort-ui-next/static/css/2.9f34d7ff.chunk.css",
-    "static/js/2.3a399667.chunk.js": "/daswort-ui-next/static/js/2.3a399667.chunk.js",
-    "static/js/2.3a399667.chunk.js.map": "/daswort-ui-next/static/js/2.3a399667.chunk.js.map",
-    "static/js/3.d25cbfe8.chunk.js": "/daswort-ui-next/static/js/3.d25cbfe8.chunk.js",
-    "static/js/3.d25cbfe8.chunk.js.map": "/daswort-ui-next/static/js/3.d25cbfe8.chunk.js.map",
+    "static/js/2.fcd1aa81.chunk.js": "/daswort-ui-next/static/js/2.fcd1aa81.chunk.js",
+    "static/js/2.fcd1aa81.chunk.js.map": "/daswort-ui-next/static/js/2.fcd1aa81.chunk.js.map",
+    "static/js/3.a546e7e4.chunk.js": "/daswort-ui-next/static/js/3.a546e7e4.chunk.js",
+    "static/js/3.a546e7e4.chunk.js.map": "/daswort-ui-next/static/js/3.a546e7e4.chunk.js.map",
     "index.html": "/daswort-ui-next/index.html",
     "static/css/2.9f34d7ff.chunk.css.map": "/daswort-ui-next/static/css/2.9f34d7ff.chunk.css.map",
-    "static/css/main.a617e044.chunk.css.map": "/daswort-ui-next/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.3a399667.chunk.js.LICENSE.txt": "/daswort-ui-next/static/js/2.3a399667.chunk.js.LICENSE.txt",
+    "static/css/main.6f975f50.chunk.css.map": "/daswort-ui-next/static/css/main.6f975f50.chunk.css.map",
+    "static/js/2.fcd1aa81.chunk.js.LICENSE.txt": "/daswort-ui-next/static/js/2.fcd1aa81.chunk.js.LICENSE.txt",
     "static/media/getFetch.cjs": "/daswort-ui-next/static/media/getFetch.582d29c4.cjs",
     "static/media/logo.6ce24c58.svg": "/daswort-ui-next/static/media/logo.6ce24c58.svg",
     "static/media/300.css": "/daswort-ui-next/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
@@ -22,10 +22,10 @@
     "static/media/700.css": "/daswort-ui-next/static/media/roboto-vietnamese-700-normal.3096f18a.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.3a90ec6b.js",
+    "static/js/runtime-main.97bab9a8.js",
     "static/css/2.9f34d7ff.chunk.css",
-    "static/js/2.3a399667.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.be137974.chunk.js"
+    "static/js/2.fcd1aa81.chunk.js",
+    "static/css/main.6f975f50.chunk.css",
+    "static/js/main.e09db72c.chunk.js"
   ]
 }
