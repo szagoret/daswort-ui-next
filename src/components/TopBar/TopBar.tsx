@@ -55,12 +55,13 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export declare interface TopBarProps {
-    name: String
+    name: String,
+    onToggle: () => void
 }
 
-const TopBar = ({name}: TopBarProps) => (
+const TopBar = ({name, onToggle}: TopBarProps) => (
     <Box sx={{flexGrow: 1}}>
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar
                 sx={{
                     bgcolor: 'common.white',
@@ -76,6 +77,7 @@ const TopBar = ({name}: TopBarProps) => (
                     color="inherit"
                     aria-label="open drawer"
                     sx={{mr: 2}}
+                    onClick={() => onToggle()}
                 >
                     <MenuIcon/>
                 </IconButton>
@@ -83,7 +85,7 @@ const TopBar = ({name}: TopBarProps) => (
                     variant="h6"
                     noWrap
                     component="div"
-                    sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
+                    sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}
                 >
                     {name}
                 </Typography>

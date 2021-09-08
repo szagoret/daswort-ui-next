@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './i18n';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@fontsource/roboto/300.css';
@@ -11,14 +12,16 @@ import {CircularProgress, ThemeProvider} from "@mui/material";
 import {Provider} from 'react-redux';
 import theme from './theme';
 import store from './store';
-import './i18n';
+import {HashRouter} from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
         <Suspense fallback={<CircularProgress/>}>
             <Provider store={store}>
                 <ThemeProvider theme={theme}>
-                    <App/>
+                    <HashRouter basename="/daswort-ui-next">
+                        <App/>
+                    </HashRouter>
                 </ThemeProvider>
             </Provider>
         </Suspense>
