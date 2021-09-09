@@ -61,7 +61,10 @@ export declare interface TopBarProps {
 
 const TopBar = ({name, onToggle}: TopBarProps) => (
     <Box sx={{flexGrow: 1}}>
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{
+            zIndex: (theme) => theme.zIndex.drawer + 1,
+            boxShadow: 'none'
+        }}>
             <Toolbar
                 sx={{
                     bgcolor: 'common.white',
