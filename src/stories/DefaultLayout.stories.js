@@ -1,4 +1,4 @@
-import DefaultLayout from "../components/layout/DefaultLayout";
+import DefaultLayout from "../components/Layout/DefaultLayout";
 import {Typography} from "@mui/material";
 
 export default {
