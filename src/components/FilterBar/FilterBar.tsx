@@ -12,7 +12,7 @@ const FilterBar = () => {
 
     return (
         <Box>
-            <Paper>
+            <Paper variant="outlined">
                 <Grid container spacing={2} sx={{p: 1}}>
                     <Grid item xs={12} sm={4} md={3}>
                         <Autocomplete

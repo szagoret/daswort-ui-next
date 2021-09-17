@@ -1,5 +1,6 @@
 import DefaultLayout from "../components/Layout/DefaultLayout";
 import {Typography} from "@mui/material";
+import FilterBar from "../components/FilterBar/FilterBar";
 
 export default {
     title: 'Components/DefaultLayout',
@@ -8,6 +9,7 @@ export default {
 
 const Template = () => (
     <DefaultLayout>
+        <FilterBar/>
         <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

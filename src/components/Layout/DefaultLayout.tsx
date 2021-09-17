@@ -32,7 +32,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
     return (
         <Container>
             <TopBar name="DarWort" onToggle={toggleDrawer}/>
-            <Box sx={{display: 'inline-flex', mt: 10}}>
+            <Box sx={{display: 'inline-flex', mt: 10}} component="nav">
                 <NavBar open={drawerOpen} items={drawerItems}/>
                 <Box component="main" sx={{flexGrow: 1, p: 3}}>
                     {children}

@@ -1,6 +1,6 @@
-import {Theme} from "@mui/material";
+import {Box, Theme} from "@mui/material";
 import {styled} from "@mui/material/styles";
-import MuiDrawer from '@mui/material/Drawer';
+import Drawer from '@mui/material/Drawer';
 import {CSSObject} from "@emotion/react";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -39,22 +39,24 @@ const DrawerHeader = styled('div')(({theme}) => ({
     ...theme.mixins.toolbar,
 }));
 
-const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})(
-    ({theme, open}) => ({
-        width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: 'nowrap',
-        boxSizing: 'border-box',
-        ...(open && {
-            ...openedMixin(theme),
-            '& .MuiDrawer-paper': openedMixin(theme),
-        }),
-        ...(!open && {
-            ...closedMixin(theme),
-            '& .MuiDrawer-paper': closedMixin(theme),
-        }),
-    }),
-);
+// const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})(
+//     ({theme, open}) => ({
+//         width: drawerWidth,
+//         flexShrink: 0,
+//         whiteSpace: 'nowrap',
+//         boxSizing: 'border-box',
+//         display: 'block',
+//         [`& .MuiDrawer-docked`]: {width: drawerWidth, boxSizing: 'border-box'},
+//         ...(open && {
+//             ...openedMixin(theme),
+//             '& .MuiDrawer-docked': openedMixin(theme),
+//         }),
+//         ...(!open && {
+//             ...closedMixin(theme),
+//             '& .MuiDrawer-docked': closedMixin(theme),
+//         }),
+//     }),
+// );
 
 declare interface NavBarDrawerItem {
     label: string,
@@ -67,17 +69,35 @@ declare interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({open, items}) => (
-    <Drawer variant="permanent" open={open}>
-        <DrawerHeader/>
-        <List>
-            {items.map((({icon, label}, index) => (
-                <ListItem button key={index}>
-                    <ListItemIcon>{icon}</ListItemIcon>
-                    <ListItemText primary={label}/>
-                </ListItem>
-            )))
-            }
-        </List>
-    </Drawer>);
+    <Box component="nav"
+         sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}
+         aria-label="mailbox folders"
+    >
+        <Drawer variant="temporary" open={open}
+                // onClose={handleDrawerToggle}
+                ModalProps={{
+                    keepMounted: true // Better open performance on mobile.
+                }}
+                sx={{
+                    display: { xs: "block", sm: "none" },
+                    "& .MuiDrawer-paper": {
+                        boxSizing: "border-box",
+                        width: drawerWidth
+                    }
+                }}
+        >
+            <DrawerHeader/>
+            <List>
+                {items.map((({icon, label}, index) => (
+                    <ListItem button key={index}>
+                        <ListItemIcon>{icon}</ListItemIcon>
+                        <ListItemText primary={label}/>
+                    </ListItem>
+                )))
+                }
+            </List>
+        </Drawer>
+    </Box>
+);
 
 export default NavBar;
