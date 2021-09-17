@@ -1,61 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Button, ButtonGroup, Checkbox, CssBaseline, styled, Typography} from "@mui/material";
-import Button1 from "./button1";
-import {useTranslation} from "react-i18next";
-import TopBar from "./components/TopBar/TopBar";
-import {Link, Route, Switch} from "react-router-dom";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
+import {CssBaseline, Typography} from "@mui/material";
+import FilterBar from "./components/FilterBar/FilterBar";
+import DefaultLayout from "./components/Layout/DefaultLayout";
 
 const App = () => {
-    const CustomCheckbox = styled(Checkbox)(({theme}) => ({
-        color: theme.status.danger,
-        '&.Mui-checked': {
-            color: theme.status.danger,
-        },
-    }));
-    const {t, i18n} = useTranslation();
     return (
         <div className="App">
-            <CssBaseline />
-            <TopBar name={t('topBar.name')}/>
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <Typography>Astai bun</Typography>
-                <Typography>{t(`title`)}</Typography>
-                <CustomCheckbox defaultChecked/>
-                <Button1/>
-                <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                    <Button onClick={() => i18n.changeLanguage("en")}>EN</Button>
-                    <Button onClick={() => i18n.changeLanguage("de")}>DE</Button>
-                    <Button onClick={() => i18n.changeLanguage("ro")}>RO</Button>
-                </ButtonGroup>
-                <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                    <Link to="/page1" as="a">p1</Link>
-                    <Link to="/page2" as="a">p2</Link>
-                </ButtonGroup>
-                <Switch>
-                    <Route path="/page1" component={Page1}>
-                        <Page1/>
-                    </Route>
-                    <Route path="/page2">
-                        <Page2/>
-                    </Route>
-                </Switch>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <CssBaseline/>
+            <DefaultLayout>
+                <FilterBar/>
+                {/*<Typography paragraph>*/}
+                {/*    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod*/}
+                {/*    tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non*/}
+                {/*    enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus*/}
+                {/*    imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.*/}
+                {/*    Convallis convallis tellus id interdum velit laoreet id donec ultrices.*/}
+                {/*    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit*/}
+                {/*    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra*/}
+                {/*    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum*/}
+                {/*    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis*/}
+                {/*    feugiat vivamus at augue. At augue eget arcu dictum varius duis at*/}
+                {/*    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa*/}
+                {/*    sapien faucibus et molestie ac.*/}
+                {/*</Typography>*/}
+            </DefaultLayout>
         </div>
     );
 };
