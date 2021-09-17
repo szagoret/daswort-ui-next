@@ -7,6 +7,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import React from "react";
+import Toolbar from "@mui/material/Toolbar";
+import Divider from "@mui/material/Divider";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 const drawerWidth = 240;
 
@@ -58,6 +62,34 @@ const DrawerHeader = styled('div')(({theme}) => ({
 //     }),
 // );
 
+const drawer = (
+    <div>
+        <Toolbar/>
+        <Divider/>
+        <List>
+            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon>
+                        {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                    </ListItemIcon>
+                    <ListItemText primary={text}/>
+                </ListItem>
+            ))}
+        </List>
+        <Divider/>
+        <List>
+            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon>
+                        {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                    </ListItemIcon>
+                    <ListItemText primary={text}/>
+                </ListItem>
+            ))}
+        </List>
+    </div>
+);
+
 declare interface NavBarDrawerItem {
     label: string,
     icon: React.ReactNode
@@ -65,39 +97,43 @@ declare interface NavBarDrawerItem {
 
 declare interface NavBarProps {
     open: boolean,
-    items: NavBarDrawerItem[]
+    items: NavBarDrawerItem[],
+    handleDrawerToggle: (args: any) => void
 }
 
-const NavBar: React.FC<NavBarProps> = ({open, items}) => (
-    <Box component="nav"
-         sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}
-         aria-label="mailbox folders"
-    >
-        <Drawer variant="temporary" open={open}
-                // onClose={handleDrawerToggle}
+const NavBar: React.FC<NavBarProps> = ({open, items, handleDrawerToggle}) => {
+    return (
+        <Box
+            component="nav"
+            sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}
+            aria-label="mailbox folders"
+        >
+            <Drawer
+                variant="temporary"
+                open={open}
+                onClose={handleDrawerToggle}
                 ModalProps={{
-                    keepMounted: true // Better open performance on mobile.
+                    keepMounted: true, // Better open performance on mobile.
                 }}
                 sx={{
-                    display: { xs: "block", sm: "none" },
-                    "& .MuiDrawer-paper": {
-                        boxSizing: "border-box",
-                        width: drawerWidth
-                    }
+                    display: {xs: 'block', sm: 'none'},
+                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                 }}
-        >
-            <DrawerHeader/>
-            <List>
-                {items.map((({icon, label}, index) => (
-                    <ListItem button key={index}>
-                        <ListItemIcon>{icon}</ListItemIcon>
-                        <ListItemText primary={label}/>
-                    </ListItem>
-                )))
-                }
-            </List>
-        </Drawer>
-    </Box>
-);
+            >
+                {drawer}
+            </Drawer>
+            <Drawer
+                variant="permanent"
+                sx={{
+                    display: {xs: 'none', sm: 'block'},
+                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                }}
+                open
+            >
+                {drawer}
+            </Drawer>
+        </Box>
+    );
+};
 
 export default NavBar;

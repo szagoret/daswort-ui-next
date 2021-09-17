@@ -59,11 +59,11 @@ export declare interface TopBarProps {
     onToggle: () => void
 }
 
-const TopBar = ({name, onToggle}: TopBarProps) => (
-    <Box sx={{flexGrow: 1}}>
+const TopBar: React.FC<TopBarProps> = ({name, onToggle}) => (
+    <Box sx={{flexGrow: 1, display: 'flex'}}>
         <AppBar position="fixed" sx={{
             zIndex: (theme) => theme.zIndex.drawer + 1,
-            boxShadow: 'none'
+            // boxShadow: 'none'
         }}>
             <Toolbar
                 sx={{
@@ -79,8 +79,8 @@ const TopBar = ({name, onToggle}: TopBarProps) => (
                     edge="start"
                     color="inherit"
                     aria-label="open drawer"
-                    sx={{mr: 2}}
-                    onClick={() => onToggle()}
+                    sx={{mr: 2, display: {sm:'none'}}}
+                    onClick={onToggle}
                 >
                     <MenuIcon/>
                 </IconButton>

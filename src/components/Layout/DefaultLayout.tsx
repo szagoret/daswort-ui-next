@@ -1,4 +1,3 @@
-import {Container} from "@mui/material";
 import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import TopBar from "../TopBar/TopBar";
@@ -30,15 +29,13 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
         }
     ];
     return (
-        <Container>
+        <Box sx={{display: 'flex'}}>
             <TopBar name="DarWort" onToggle={toggleDrawer}/>
-            <Box sx={{display: 'inline-flex', mt: 10}} component="nav">
-                <NavBar open={drawerOpen} items={drawerItems}/>
-                <Box component="main" sx={{flexGrow: 1, p: 3}}>
-                    {children}
-                </Box>
+            <NavBar open={drawerOpen} items={drawerItems} handleDrawerToggle={toggleDrawer}/>
+            <Box component="main" sx={{flexGrow: 1, p: 3, mt: 5}}>
+                {children}
             </Box>
-        </Container>
+        </Box>
     );
 };
 
